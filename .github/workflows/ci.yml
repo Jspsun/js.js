@@ -14,7 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run ESLint
-      uses: stefanoeb/eslint-action@1.0.2
+      uses: hallee/eslint-action@master
       with:
-        # Blob of files to lint
-        files: src stories
+        files: [src, stories]
