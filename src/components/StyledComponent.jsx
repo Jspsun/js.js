@@ -8,5 +8,5 @@ export default function StyledComponent() {
   `;
   return (
     <ColoredDiv>This is a styled component</ColoredDiv>
-  )
+  );
 }
