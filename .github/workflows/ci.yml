@@ -16,4 +16,4 @@ jobs:
     - name: Run ESLint
       uses: gimenete/eslint-action@master
       with:
-        files: [/src/, /stories/]
+        files: [src/**/*, stories/**/*"]
