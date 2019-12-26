@@ -7,6 +7,6 @@ export default function StyledComponent() {
     font-size: ${10 + 30}px;
   `;
   return (
-    <ColoredDiv>This is a styled component</ColoredDiv>
+    <ColoredDiv>This is a teststyled component</ColoredDiv>
   );
 }
