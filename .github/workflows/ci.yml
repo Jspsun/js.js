@@ -8,9 +8,7 @@ on:
 
 jobs:
   lint:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
@@ -18,6 +16,7 @@ jobs:
     - run: npm run lint src/**/* stories/**/*
 
   build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - run: npm install
