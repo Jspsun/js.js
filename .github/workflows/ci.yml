@@ -15,7 +15,7 @@ jobs:
     - run: npm install
     - run: npm run lint src/**/* stories/**/*
 
-  build:
+  testBuild:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
