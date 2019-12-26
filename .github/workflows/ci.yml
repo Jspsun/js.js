@@ -13,7 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run ESLint
-      uses: gimenete/eslint-action@master
-      with:
-        files: [src/**/*, stories/**/*"]
+    - uses: actions/setup-node@v1
+    - run: npm install
+    - run: npm run lint src/**/* stories/**/*
