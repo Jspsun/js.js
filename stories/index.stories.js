@@ -4,4 +4,4 @@ import StyledComponent from '../src/components/StyledComponent';
 
 
 storiesOf('components', module)
-  .add('styled component', () => <StyledComponent />);
+  .add('styled component', () => <StyledComponent />)
