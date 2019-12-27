@@ -1,6 +1,6 @@
 {
   "name": "@jspsun/js.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "UI components for Jonathan Sun's website",
   "scripts": {
     "lintproject": "npm run lint src/**/* stories/**/*",
@@ -8,7 +8,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o dist"
   },
-  "keywords": [],
+  "homepage": "https:/js-js.io",
+  "keywords": ["js.js", "react", "library"],
   "author": "Jonathan Sun",
   "repository": {
     "type": "git",
