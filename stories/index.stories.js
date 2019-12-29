@@ -1,7 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import StyledComponent from '../src/components/StyledComponent';
+import { themes } from '@storybook/theming';
 
+import SimpleOrbitPlanet from '../src/components/doodles/Planet';
 
-storiesOf('components', module)
-  .add('styled component', () => <StyledComponent />);
+storiesOf('Doodles', module)
+  .addParameters({ options: { theme: themes.dark } })
+  .add('simple orbit planet', () => <SimpleOrbitPlanet />);
