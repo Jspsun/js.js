@@ -20,6 +20,9 @@
     "url": "https://github.com/Jspsun/js.js.git"
   },
   "license": "ISC",
+  "files": [
+    "src"
+  ],
   "babel": {
     "presets": [
       "env",
