@@ -1,6 +1,10 @@
 import React from 'react';
 import Styled, { keyframes } from 'styled-components';
 import { darken } from 'polished';
+import { red, grey } from '../../constants/colors';
+
+const gravitationConst = 6.673;
+const t = 1.92;
 
 export default function SimpleOrbitPlanet() {
   const Container = Styled.div`
@@ -10,14 +14,14 @@ export default function SimpleOrbitPlanet() {
   `;
 
   const Planet = Styled.div`
-    background: #C25447;
-    box-shadow: inset -30px -30px 0px ${darken(0.02, '#C25447')};
+    background: ${red};
+    box-shadow: inset -30px -30px 0px ${darken(0.02, red)};
     width: 200px;
     height: 200px;
     border-radius: 100%;
     &:before {
       content: '';
-      background-color: ${darken(0.05, '#C25447')};
+      background-color: ${darken(0.05, red)};
       border-radius: 100%;
       width: 20px;
       height: 20px;
@@ -26,7 +30,7 @@ export default function SimpleOrbitPlanet() {
     }
     &:after {
       content: '';
-      background: ${darken(0.04, '#C25447')};
+      background: ${darken(0.04, red)};
       border-radius: 100%;
       width: 50px;
       height: 50px;
@@ -41,9 +45,6 @@ export default function SimpleOrbitPlanet() {
     }
   `;
 
-  const gravitationConst = 6.673;
-  const t = 1.92;
-
   const Orbit = Styled.div`
     width: 300px;
     height: 300px;
@@ -56,14 +57,14 @@ export default function SimpleOrbitPlanet() {
 
   const Moon = Styled.div`
     background: #9E9E9E;
-    box-shadow: inset -7px -7px 0 ${darken(0.07, '#9E9E9E')};
+    box-shadow: inset -7px -7px 0 ${darken(0.07, grey)};
     width: 50px;
     height: 50px;
     border-radius: 100%;
     margin: 20px;
     &:before {
       content: '';
-      background: ${darken(0.04, '#9E9E9E')};
+      background: ${darken(0.04, grey)};
       border-radius: 100%;
       width: 9px;
       height: 9px;
@@ -72,7 +73,7 @@ export default function SimpleOrbitPlanet() {
     }
     &:after {
       content: '';
-      background: ${darken(0.04, '#9E9E9E')};
+      background: ${darken(0.04, grey)};
       border-radius: 100%;
       width: 9px;
       height: 9px;
