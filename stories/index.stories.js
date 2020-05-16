@@ -6,4 +6,9 @@ import SimpleOrbitPlanet from '../src/components/doodles/Planet';
 
 storiesOf('Doodles', module)
   .addParameters({ options: { theme: themes.dark } })
-  .add('simple orbit planet', () => <SimpleOrbitPlanet />);
+  .add('simple orbit planet', () =>
+    (<SimpleOrbitPlanet
+      orbitRadius={300}
+      planetRadius={200}
+      moonRadius={50}
+    />));
