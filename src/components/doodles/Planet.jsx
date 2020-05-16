@@ -1,41 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Styled, { keyframes } from 'styled-components';
 import { darken } from 'polished';
-import { red, grey } from '../../constants/colors';
+import { red, grey, transparentGrey } from '../../constants/colors';
 
 const gravitationConst = 6.673;
 const t = 1.92;
 
-export default function SimpleOrbitPlanet() {
+export default function SimpleOrbitPlanet(props) {
   const Container = Styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: ${(props.orbitRadius - props.planetRadius) / 2}px;
   `;
 
   const Planet = Styled.div`
     background: ${red};
-    box-shadow: inset -30px -30px 0px ${darken(0.02, red)};
-    width: 200px;
-    height: 200px;
+    box-shadow: inset -${props.planetRadius / 10}px -${props.planetRadius / 10}px 0px ${darken(0.02, red)};
+    width: ${props.planetRadius}px;
+    height: ${props.planetRadius}px;
     border-radius: 100%;
     &:before {
       content: '';
       background-color: ${darken(0.05, red)};
       border-radius: 100%;
-      width: 20px;
-      height: 20px;
+      width: 10%;
+      height: 10%;
       display: block;
-      margin: 50px 100px;
+      margin: 25% 50%;
     }
     &:after {
       content: '';
       background: ${darken(0.04, red)};
       border-radius: 100%;
-      width: 50px;
-      height: 50px;
+      width: 25%;
+      height: 25%;
       display: block;
-      margin: -20px 40px;
+      margin: -10% 20%;
     }
   `;
 
@@ -46,23 +47,23 @@ export default function SimpleOrbitPlanet() {
   `;
 
   const Orbit = Styled.div`
-    width: 300px;
-    height: 300px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    width: ${props.orbitRadius}px;
+    height: ${props.orbitRadius}px;
+    border: 1px solid ${transparentGrey};
     position: absolute;
     border-radius: 100%;
-    margin: -50px auto;
-  animation: ${orbit} ${gravitationConst * t}s linear infinite;
+    margin: -${(props.orbitRadius - props.planetRadius) / 2}px auto;
+    animation: ${orbit} ${gravitationConst * t}s linear infinite;
   `;
 
   const Moon = Styled.div`
-    background: #9E9E9E;
+    background: ${grey};
     box-shadow: inset -7px -7px 0 ${darken(0.07, grey)};
-    width: 50px;
-    height: 50px;
+    width: ${props.moonRadius}px;
+    height: ${props.moonRadius}px;
     border-radius: 100%;
-    margin: 20px;
-    &:before {
+    margin: ${props.moonRadius * 0.5}px;
+    /* &:before {
       content: '';
       background: ${darken(0.04, grey)};
       border-radius: 100%;
@@ -79,7 +80,7 @@ export default function SimpleOrbitPlanet() {
       height: 9px;
       display: block;
       margin: -7px 20px;
-    }
+    } */
   `;
 
   return (
@@ -91,3 +92,9 @@ export default function SimpleOrbitPlanet() {
     </Container>
   );
 }
+
+SimpleOrbitPlanet.propTypes = {
+  orbitRadius: PropTypes.number.isRequired,
+  planetRadius: PropTypes.number.isRequired,
+  moonRadius: PropTypes.number.isRequired,
+};
