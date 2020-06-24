@@ -21,8 +21,8 @@ jobs:
           name: dist
           path: dist
 
-  publishNPM:
-    name: Publish
+  publishGitHubNPM:
+    name: publishGitHubNPM
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -36,8 +36,8 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GHUB_PACKAGE_TOKEN }}
 
-  publishGitHubNPM:
-    name: Publish
+  publishNPM:
+    name: publishNPM
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -53,7 +53,9 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: publish
+    needs:
+      - publishNPM
+      - publishGitHubNPM
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
