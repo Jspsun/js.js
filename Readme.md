@@ -3,7 +3,10 @@ A library for all my personal UI components. Its js.js (jonathanSun.js)!
 
 
 
-The package is available for installation at `https://www.npmjs.com/package/@jspsun/js.js` using `npm install @jspsun/js.js`
+The package is available for installation at `https://www.npmjs.com/package/@jspsun/js.js` or at `https://github.com/Jspsun/js.js/packages/284171`
+
+
+Install using `npm install @jspsun/js.js`
 
 
 All the components are viewable in a sandbox [here](https:/js-js.io)
