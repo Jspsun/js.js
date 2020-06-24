@@ -1,15 +1,12 @@
 {
   "name": "@jspsun/js.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "UI components for Jonathan Sun's website",
   "scripts": {
     "lintproject": "npm run lint src/**/* stories/**/*",
     "lint": "./node_modules/.bin/eslint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o dist"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "homepage": "https:/js-js.io",
   "keywords": [
